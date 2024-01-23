@@ -21,14 +21,19 @@
                     alt="Logo de C&K, dos zapatos de bailes junto a las iniciales C y K."
                 />
             </a>
-            <!-- Links para las distintas secciones -->
-            <button class="boton_de_navegacion">
-                <img
-                    src="./archivos/iconos/menu.png"
-                    alt="Boton de tres lineas paralelas"
-                />
+            <!-- Boton para desplegar la navegacion en mobile -->
+            <button
+                id="idBotonDeNavegacion"
+                class="boton_de_navegacion"
+                type="button"
+            >
+                <span class="only_screen_reader">Menu</span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </button>
-            <ul data-menu-desplegado="false">
+            <!-- Links para las distintas secciones -->
+            <ul id="idMenu">
                 <li>
                     <a href="#clases">
                         <img
@@ -68,5 +73,8 @@
             </ul>
         </nav>
         <!-- Fin de la navegacion -->
+        <!-- Scripts -->
+        <script src="./js/main.js"></script>
+        <!-- Fin de los scripts -->
     </body>
 </html>

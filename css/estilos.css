@@ -29,11 +29,22 @@ button {
     --blanco: #eeeeee;
 
     /* Transiciones */
-    --normal: 120ms;
+    --transicion-normal: 120ms;
+    --transicion-lenta: 220ms;
 
     /* Tamaños de fuente */
-    --normal: 1.75rem;
+    --fuente-normal: 1.75rem;
 }
+
+/* Este codigo se encarga de que no haya desbordamientos cuando se utiliza desde un telefono */
+/* --- */
+html,
+body {
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+/* --- */
 
 html {
     font-size: 62.5%;
@@ -44,6 +55,13 @@ html {
 body {
     margin: 0 auto;
     max-width: 128rem;
+    padding-inline: 5rem;
+}
+
+@media (max-width: 56rem) {
+    body {
+        padding-inline: 1rem;
+    }
 }
 
 /* Navegacion */
@@ -51,8 +69,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    border: 1px solid white;
 }
 
 .navegacion .boton_de_navegacion {
@@ -60,13 +76,12 @@ body {
 }
 
 .navegacion > a {
-    transition: all var(--normal);
+    transition: all var(--transicion-normal);
 }
 
 .navegacion > a img {
     max-width: 20rem;
     padding-block: 2rem;
-    border: 1px solid white;
 }
 
 .navegacion ul {
@@ -79,7 +94,7 @@ body {
     align-items: center;
     column-gap: 1rem;
 
-    transition: all var(--normal);
+    transition: all var(--transicion-normal);
 }
 
 .navegacion ul li img {
@@ -87,7 +102,7 @@ body {
 }
 
 .navegacion ul li a {
-    font-size: var(--normal);
+    font-size: var(--fuente-normal);
 }
 
 /* Navegacion hovers */
@@ -100,22 +115,78 @@ body {
 }
 
 /* Mobile */
-@media (max-width: 45rem) {
+@media (max-width: 56rem) {
     .navegacion {
         flex-direction: row;
         margin-inline: 2.2rem;
     }
 
+    .navegacion > a img {
+        width: 13rem;
+    }
+
     .navegacion .boton_de_navegacion {
+        position: relative;
         display: block;
+        z-index: 1000;
+    }
+
+    .navegacion .boton_de_navegacion .bar {
+        display: block;
+        margin-block: 2rem;
+        width: 6rem;
+        height: 0.3rem;
+        background-color: var(--verde);
+        transition: all var(--transicion-lenta);
+    }
+
+    .navegacion .boton_de_navegacion.cerrar .bar:nth-child(2) {
+        transform: translateY(2.25rem) rotate(45deg);
+        background-color: var(--blanco);
+    }
+
+    .navegacion .boton_de_navegacion.cerrar .bar:nth-child(3) {
+        transform: translatex(15rem);
+    }
+
+    .navegacion .boton_de_navegacion.cerrar .bar:nth-child(4) {
+        transform: translateY(-2.25rem) rotate(-45deg);
+        background-color: var(--blanco);
     }
 
     .navegacion ul {
         position: absolute;
         right: 0;
+        top: 0;
+
+        background-color: var(--rojo);
+        padding: 20rem 4rem 0;
+        min-height: 100vh;
+
         flex-direction: column;
-        row-gap: 3rem;
-        margin-top: 4rem;
-        transform: translateX(12rem);
+        row-gap: 5rem;
+
+        transition: all ease-out var(--transicion-lenta);
+        transform: translateX(22rem);
     }
+
+    .navegacion ul li a:hover {
+        color: inherit;
+    }
+
+    .navegacion ul.visible {
+        transform: translateX(0);
+    }
+}
+
+/* Utils */
+.only_screen_reader {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
 }
