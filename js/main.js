@@ -9,4 +9,7 @@ function programa() {
 function abrirYCerrarMenu() {
     document.getElementById('idMenu').classList.toggle('visible');
     document.getElementById('idBotonDeNavegacion').classList.toggle('cerrar');
+    document
+        .getElementById('idContenedorDeOpacidad')
+        .classList.toggle('opacidad_activada');
 }
