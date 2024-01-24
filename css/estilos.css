@@ -25,7 +25,7 @@ button {
     /* Colores */
     --verde: #438987;
     --rojo: #bc4270;
-    --negro: #11151a;
+    --negro: #080808;
     --blanco: #eeeeee;
     --negro-opaco: #00000060;
 
@@ -70,6 +70,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    height: 25rem;
 }
 
 .navegacion .boton_de_navegacion {
@@ -181,6 +183,19 @@ body {
     }
 }
 
+/* Pantalla de inicio */
+.inicio {
+    background-image: url('../archivos/imagenes/Baby\ Ballet\ 1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 25rem);
+    width: 100vw;
+    margin-left: -1rem;
+}
+
+/* Mobile */
+@media (min-width: 56rem) {
+}
 /* Utils */
 .only_screen_reader {
     clip: rect(1px, 1px, 1px, 1px);
