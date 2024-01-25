@@ -27,7 +27,7 @@ button {
     --rojo: #bc4270;
     --negro: #080808;
     --blanco: #eeeeee;
-    --negro-opaco: #00000060;
+    --negro-opaco: #00000090;
 
     /* Transiciones */
     --transicion-normal: 120ms;
@@ -55,7 +55,6 @@ html {
 
 body {
     margin: 0 auto;
-    max-width: 128rem;
     padding-inline: 5rem;
 }
 
@@ -71,7 +70,9 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    height: 25rem;
+    height: 20rem;
+    max-width: 128rem;
+    margin: 0 auto;
 }
 
 .navegacion .boton_de_navegacion {
@@ -83,7 +84,7 @@ body {
 }
 
 .navegacion > a img {
-    max-width: 20rem;
+    max-width: 16rem;
     padding-block: 2rem;
 }
 
@@ -122,10 +123,11 @@ body {
     .navegacion {
         flex-direction: row;
         margin-inline: 2.2rem;
+        height: 14rem;
     }
 
     .navegacion > a img {
-        width: 13rem;
+        width: 11.25rem;
     }
 
     .navegacion .boton_de_navegacion {
@@ -137,8 +139,10 @@ body {
     .navegacion .boton_de_navegacion .bar {
         display: block;
         margin-block: 1.5rem;
+
         width: 5rem;
         height: 0.3rem;
+
         background-color: var(--verde);
         transition: all var(--transicion-lenta);
     }
@@ -185,16 +189,33 @@ body {
 
 /* Pantalla de inicio */
 .inicio {
-    background-image: url('../archivos/imagenes/Baby\ Ballet\ 1.jpg');
-    background-size: cover;
-    background-position: center;
-    height: calc(100vh - 25rem);
+    position: relative;
+    height: calc(100vh - 14rem);
     width: 100vw;
     margin-left: -1rem;
+    border-block: 1px solid var(--blanco);
+    transition: all 1s ease-in-out;
 }
 
-/* Mobile */
+/* Distintos fondos */
+
+.inicio .difuminado-negro {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+    box-shadow: 10px 0 50px 100px var(--negro);
+
+    background-color: var(--negro);
+}
+
+/* desktop */
 @media (min-width: 56rem) {
+    .inicio {
+        height: calc(100vh - 20rem);
+        width: 100vw;
+        margin-left: -5rem;
+    }
 }
 /* Utils */
 .only_screen_reader {
@@ -219,4 +240,19 @@ body {
     width: 100vw;
     z-index: 400;
     background-color: var(--negro-opaco);
+}
+
+/* Animaciones */
+@keyframes animacion_colores {
+    0% {
+        background-color: var(--verde);
+    }
+
+    50% {
+        background-color: var(--rojo);
+    }
+
+    100% {
+        background-color: var(--verde);
+    }
 }
