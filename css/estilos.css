@@ -60,6 +60,7 @@ body {
 }
 
 h1 {
+    line-height: 3.75rem;
     margin-bottom: 1.25rem;
     font-weight: 900;
     font-size: 3rem;
@@ -97,7 +98,7 @@ p {
 }
 
 .navegacion > a img {
-    max-width: 16rem;
+    max-width: 14rem;
     padding-block: 2rem;
 }
 
@@ -136,11 +137,11 @@ p {
     .navegacion {
         flex-direction: row;
         margin-inline: 2.2rem;
-        height: 14rem;
+        height: 10rem;
     }
 
     .navegacion > a img {
-        width: 12rem;
+        width: 8rem;
     }
 
     .navegacion .boton_de_navegacion {
@@ -203,11 +204,11 @@ p {
 /* Pantalla de inicio */
 .inicio {
     position: relative;
-    height: calc(100vh - 14rem);
+    height: calc(100vh - 10rem);
     min-height: 50rem;
     width: 100vw;
 
-    padding-inline: 1rem;
+    padding-inline: 2rem;
 
     display: flex;
     justify-content: center;
@@ -221,7 +222,7 @@ p {
 .inicio .inicio_texto {
     display: flex;
     flex-direction: column;
-    gap: 1.45rem;
+    gap: 1.15rem;
     position: relative;
     z-index: 450;
 }
