@@ -24,6 +24,7 @@ button {
 :root {
     /* Colores */
     --verde: #438987;
+    --verde-claro: #648a88;
     --rojo: #bc4270;
     --negro: #080808;
     --blanco: #eeeeee;
@@ -216,7 +217,7 @@ p {
     overflow: hidden;
 
     margin-left: -1rem;
-    border-block: 1px solid var(--blanco);
+    /* border-block: 1px solid var(--blanco); */
 }
 
 .inicio .inicio_texto {
@@ -249,10 +250,15 @@ p {
 }
 
 .inicio .inicio_texto .redireccion_en_inicio a {
-    padding: 1.5rem 8rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 4rem;
     background-color: var(--verde);
     border-radius: 0.5rem;
     width: fit-content;
+    white-space: nowrap;
+    transition: all var(--transicion-lenta);
 }
 
 /* Fondos */
@@ -288,7 +294,54 @@ p {
         width: 100vw;
         margin-left: -5rem;
     }
+
+    .inicio .inicio_texto {
+        gap: 3rem;
+    }
+
+    .inicio h1 {
+        font-size: 5rem;
+        line-height: 6rem;
+    }
+
+    .inicio p {
+        font-size: 2rem;
+    }
+
+    .inicio .inicio_texto .redireccion_en_inicio a:hover {
+        transform: scale(1.05);
+        background-color: var(--rojo);
+    }
 }
+
+/* Contenido principal - main */
+.contenido_principal {
+    width: 100%;
+    padding: 2rem;
+}
+
+.contenido_principal span > img {
+    margin-left: 4rem;
+    margin-right: 0.25rem;
+}
+
+.contenido_principal .contenedor_banner {
+    padding: 1rem;
+    border-top: 1px solid var(--rojo);
+    border-bottom: 1px solid var(--verde);
+}
+
+.contenido_principal span {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+    padding-inline: 2rem;
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    background-color: var(--negro);
+}
+
 /* Utils */
 .only_screen_reader {
     clip: rect(1px, 1px, 1px, 1px);

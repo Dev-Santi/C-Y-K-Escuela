@@ -3,6 +3,9 @@ let indiceFondoInicial = 0;
 let indiceFondoFinal = 2;
 let indicieFondoActual = indiceFondoFinal;
 
+let posicionDelBannerInicial = window.innerWidth;
+let posicionDelBannerActual = posicionDelBannerInicial;
+
 // Programa
 window.addEventListener('load', programa);
 
@@ -12,10 +15,15 @@ function programa() {
         .getElementById('idBotonDeNavegacion')
         .addEventListener('click', abrirYCerrarMenu);
 
-    // Desplazamiento de backgrounds en el inicio
+    // Desplazamiento de fondos en el inicio
     setInterval(() => {
         animacionImagenesInicio();
     }, 5000);
+
+    //Desplazamiento del banner
+    setInterval(() => {
+        movimientoBanner();
+    }, 5);
 }
 
 function abrirYCerrarMenu() {
@@ -40,4 +48,15 @@ function animacionImagenesInicio() {
     if (indicieFondoActual <= indiceFondoInicial) {
         indicieFondoActual = indiceFondoFinal;
     } else indicieFondoActual--;
+}
+
+function movimientoBanner() {
+    const banner = document.getElementById('idBanner');
+    banner.style.translate = posicionDelBannerActual + 'px';
+
+    if (posicionDelBannerActual < -window.innerWidth) {
+        posicionDelBannerActual = window.innerWidth;
+    } else {
+        posicionDelBannerActual -= 1;
+    }
 }
