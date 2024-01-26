@@ -1,3 +1,9 @@
+// Variables generales
+let indiceFondoInicial = 0;
+let indiceFondoFinal = 2;
+let indicieFondoActual = indiceFondoFinal;
+
+// Programa
 window.addEventListener('load', programa);
 
 function programa() {
@@ -7,10 +13,9 @@ function programa() {
         .addEventListener('click', abrirYCerrarMenu);
 
     // Desplazamiento de backgrounds en el inicio
-    let fondoInicial = 1;
     setInterval(() => {
         animacionImagenesInicio();
-    }, 3000);
+    }, 5000);
 }
 
 function abrirYCerrarMenu() {
@@ -22,6 +27,17 @@ function abrirYCerrarMenu() {
 }
 
 function animacionImagenesInicio() {
-    const inicio = document.getElementById('idInicio');
-    //
+    const contenedorFondos = document.getElementById('idContenedorDeFondos');
+
+    for (let fondo of contenedorFondos.children) {
+        if (fondo.id.includes(indicieFondoActual + 1)) {
+            fondo.classList.remove('ocultar');
+        } else {
+            fondo.classList.add('ocultar');
+        }
+    }
+
+    if (indicieFondoActual <= indiceFondoInicial) {
+        indicieFondoActual = indiceFondoFinal;
+    } else indicieFondoActual--;
 }
