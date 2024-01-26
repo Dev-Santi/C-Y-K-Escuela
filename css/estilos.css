@@ -205,7 +205,7 @@ p {
 .inicio {
     position: relative;
     height: calc(100vh - 10rem);
-    min-height: 50rem;
+    min-height: 55rem;
     width: 100vw;
 
     padding-inline: 2rem;
@@ -220,6 +220,7 @@ p {
 }
 
 .inicio .inicio_texto {
+    margin-top: -6rem;
     display: flex;
     flex-direction: column;
     gap: 1.15rem;
