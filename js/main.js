@@ -54,7 +54,7 @@ function movimientoBanner() {
     const banner = document.getElementById('idBanner');
     banner.style.translate = posicionDelBannerActual + 'px';
 
-    if (posicionDelBannerActual < -window.innerWidth) {
+    if (posicionDelBannerActual < -banner.clientWidth - 100) {
         posicionDelBannerActual = window.innerWidth;
     } else {
         posicionDelBannerActual -= 1;
