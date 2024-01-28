@@ -329,7 +329,10 @@ p {
 }
 
 .contenido_principal .contenedor_banner {
-    padding-block: 0.25rem;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    padding-block: 0.75rem;
     border-top: 1px solid var(--rojo);
     border-bottom: 1px solid var(--verde);
 }
@@ -343,6 +346,7 @@ p {
     font-weight: 900;
     text-transform: uppercase;
     background-color: var(--negro);
+    animation: banner 15s linear infinite;
 }
 
 .contenido_principal .banner img {
@@ -428,7 +432,7 @@ p {
 }
 
 .contenido_principal .clases .clase:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 .contenido_principal .clases .clase:hover img {
     opacity: 0%;
@@ -436,7 +440,6 @@ p {
 
 .contenido_principal .clases .clase:hover h3 {
     transform: translateY(-12rem);
-    font-size: 4rem;
 }
 
 .contenido_principal .clases .clase:hover h4 {
@@ -444,16 +447,16 @@ p {
 }
 
 .contenido_principal .clases .bg_1 {
-    background-image: url('../archivos/imagenes/Pilates.jpg');
+    background-image: url('../archivos/imagenes/Pilates.webp');
 }
 .contenido_principal .clases .bg_2 {
-    background-image: url('../archivos/imagenes/Foto\ directores\ del\ estudio.1.jpg');
+    background-image: url('../archivos/imagenes/Foto\ directores\ del\ estudio.1.webp');
 }
 .contenido_principal .clases .bg_3 {
     background-image: url('../archivos/imagenes/Ballet\ adulto\ 2.jpg');
 }
 .contenido_principal .clases .bg_4 {
-    background-image: url('../archivos/imagenes/Ballet\ Niñ@s\ 2.jpg');
+    background-image: url('../archivos/imagenes/Ritmos\ 1.webp');
 }
 
 @media (min-width: 56rem) {
@@ -501,16 +504,12 @@ p {
 }
 
 /* Animaciones */
-@keyframes animacion_colores {
+@keyframes banner {
     0% {
-        background-color: var(--verde);
-    }
-
-    50% {
-        background-color: var(--rojo);
+        transform: translateX(100vw);
     }
 
     100% {
-        background-color: var(--verde);
+        transform: translateX(-100vw);
     }
 }

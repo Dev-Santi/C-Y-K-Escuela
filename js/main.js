@@ -1,72 +1,56 @@
-// Variables generales
-let indiceFondoInicial = 0;
-let indiceFondoFinal = 2;
+// Variables y constantes generales
+const indiceFondoInicial = 0;
+const indiceFondoFinal = 2;
 let indicieFondoActual = indiceFondoFinal;
-
-let posicionDelBannerInicial = window.innerWidth;
-let posicionDelBannerActual = posicionDelBannerInicial;
 
 // Programa
 window.addEventListener('load', programa);
 
 function programa() {
-    // Botón para desplegar el menú de navegación
-    document
-        .getElementById('idBotonDeNavegacion')
-        .addEventListener('click', abrirYCerrarMenu);
+    // console.log('Se ejecuta programa');
+    //Constantes
+    const body = document.getElementById('idBody');
+    const menu = document.getElementById('idMenu');
+    const botonMenu = document.getElementById('idBotonDeNavegacion');
+    const contenedorDeOpacidad = document.getElementById('idContenedorDeOpacidad');
+    const contenedorFondos = document.getElementById('idContenedorDeFondos');
 
-    // Desplazamiento de fondos en el inicio
+    //Botón para desplegar el menú de navegación
+    botonMenu.addEventListener('click', abrirYCerrarMenu);
+    //Cuando un link sea clickeado, desactivar la navegacion
+    for (let link of menu.children) {
+        link.addEventListener('click', abrirYCerrarMenu);
+    }
+
+    //Desplazamiento de fondos en el inicio
     setInterval(() => {
         animacionImagenesInicio();
     }, 5000);
 
-    //Desplazamiento del banner
-    setInterval(() => {
-        movimientoBanner();
-    }, 5);
-}
+    //Funciones
+    function abrirYCerrarMenu() {
+        // console.log(
+        //     menu.classList.contains('visible') ? 'Desactivando menu' : 'Activando menu'
+        // );
 
-function abrirYCerrarMenu() {
-    const menu = document.getElementById('idMenu');
-    menu.classList.toggle('visible');
-    document.getElementById('idBotonDeNavegacion').classList.toggle('cerrar');
-    document
-        .getElementById('idContenedorDeOpacidad')
-        .classList.toggle('opacidad_activada');
-
-    //Desactivar el scroll cuando el menu este activo
-    document.getElementById('idBody').classList.toggle('no_scroll');
-
-    //Desactivar menu siempre que se clickee un link
-    for (let link of menu.children) {
-        link.removeEventListener('click', abrirYCerrarMenu);
-        link.addEventListener('click', abrirYCerrarMenu);
+        menu.classList.toggle('visible');
+        botonMenu.classList.toggle('cerrar');
+        contenedorDeOpacidad.classList.toggle('opacidad_activada');
+        //Desactivar el scroll cuando el menu este activo
+        body.classList.toggle('no_scroll');
     }
-}
 
-function animacionImagenesInicio() {
-    const contenedorFondos = document.getElementById('idContenedorDeFondos');
-
-    for (let fondo of contenedorFondos.children) {
-        if (fondo.id.includes(indicieFondoActual + 1)) {
-            fondo.classList.remove('ocultar');
-        } else {
-            fondo.classList.add('ocultar');
+    function animacionImagenesInicio() {
+        for (let fondo of contenedorFondos.children) {
+            if (fondo.id.includes(indicieFondoActual + 1)) {
+                fondo.classList.remove('ocultar');
+            } else {
+                fondo.classList.add('ocultar');
+            }
         }
-    }
 
-    if (indicieFondoActual <= indiceFondoInicial) {
-        indicieFondoActual = indiceFondoFinal;
-    } else indicieFondoActual--;
-}
-
-function movimientoBanner() {
-    const banner = document.getElementById('idBanner');
-    banner.style.translate = posicionDelBannerActual + 'px';
-
-    if (posicionDelBannerActual < -banner.clientWidth - 100) {
-        posicionDelBannerActual = window.innerWidth;
-    } else {
-        posicionDelBannerActual -= 1;
+        if (indicieFondoActual <= indiceFondoInicial) {
+            indicieFondoActual = indiceFondoFinal;
+        } else indicieFondoActual--;
     }
 }
