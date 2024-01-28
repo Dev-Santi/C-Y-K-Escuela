@@ -5,8 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="Santiago Larrosa Bauzá" />
         <meta name="copyright" content="Matías Rocha" />
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
         <title>Escuela de Danza C&K</title>
         <meta
             name="description"
@@ -27,7 +25,11 @@
                 />
             </a>
             <!-- Boton para desplegar la navegacion en mobile -->
-            <button id="idBotonDeNavegacion" class="boton_de_navegacion" type="button">
+            <button
+                id="idBotonDeNavegacion"
+                class="boton_de_navegacion"
+                type="button"
+            >
                 <span class="only_screen_reader">Menu</span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -76,7 +78,7 @@
         <!-- Fin de la navegacion -->
         <!-- Pantalla de inicio -->
         <header id="idInicio" class="inicio">
-            <picture id="idContenedorDeFondos" class="contenedor_de_fondos">
+            <div id="idContenedorDeFondos" class="contenedor_de_fondos">
                 <img
                     id="idBg_1"
                     class="bg"
@@ -95,7 +97,7 @@
                     src="./archivos/imagenes/Baby Ballet 1.webp"
                     alt="rellenar"
                 />
-            </picture>
+            </div>
             <div class="inicio_texto">
                 <h1>
                     <h1>
@@ -103,8 +105,9 @@
                         <span>Escuela de Danza C&K</span>!
                     </h1>
                     <p>
-                        Únete a nuestra comunidad y libera tu potencial. Descubre por qué
-                        somos el estudio de baile favorito en Montevideo.
+                        Únete a nuestra comunidad y libera tu potencial.
+                        Descubre por qué somos el estudio de baile favorito en
+                        Montevideo.
                     </p>
                 </h1>
                 <div class="redireccion_en_inicio">
@@ -134,14 +137,20 @@
                 </span>
             </div>
             <!-- Clases -->
-            <section class="clases">
+            <section id="clases" class="clases">
                 <h2>¡ENCUENTRA TU RITMO!</h2>
                 <div id="idContenedorDeClases" class="contenedor_clases">
                     <a
                         target="_blank"
                         href="https://api.whatsapp.com/send?phone=59893487938"
-                        class="clase bg_2"
+                        class="clase"
                     >
+                        <img
+                            class="imagen_fondo_clase"
+                            src="./archivos/imagenes/Foto directores del estudio.1.webp"
+                            alt="Foto de los directores bailando Tango"
+                            loading="lazy"
+                        />
                         <div class="fondo-opaco"></div>
                         <img
                             src="./archivos/imagenes/Logo sin fondo30.png"
@@ -150,11 +159,18 @@
                         <h3>Tango</h3>
                         <h4>Consultar</h4>
                     </a>
+
                     <a
                         target="_blank"
                         href="https://api.whatsapp.com/send?phone=59893487938"
-                        class="clase bg_1"
+                        class="clase"
                     >
+                        <img
+                            class="imagen_fondo_clase"
+                            src="./archivos/imagenes/Pilates.webp"
+                            alt="Grupo de personas haciendo pilates."
+                            loading="lazy"
+                        />
                         <div class="fondo-opaco"></div>
                         <img
                             src="./archivos/imagenes/Logo sin fondo30.png"
@@ -163,28 +179,42 @@
                         <h3>Pilates</h3>
                         <h4>Consultar</h4>
                     </a>
+
                     <a
                         target="_blank"
                         href="https://api.whatsapp.com/send?phone=59893487938"
-                        class="clase bg_3"
+                        class="clase"
                     >
+                        <img
+                            class="imagen_fondo_clase"
+                            src="./archivos/imagenes/Ballet adulto 2.webp"
+                            alt="Ballet para adultos"
+                        />
                         <div class="fondo-opaco"></div>
                         <img
                             src="./archivos/imagenes/Logo sin fondo30.png"
                             alt="Logo de C&K"
+                            loading="lazy"
                         />
                         <h3>Ballet adultos</h3>
                         <h4>Consultar</h4>
                     </a>
+
                     <a
                         target="_blank"
                         href="https://api.whatsapp.com/send?phone=59893487938"
-                        class="clase bg_4"
+                        class="clase"
                     >
+                        <img
+                            class="imagen_fondo_clase"
+                            src="./archivos/imagenes/Ballet Niñ@s 2.webp"
+                            alt="Foto de niños haciendo ballet"
+                        />
                         <div class="fondo-opaco"></div>
                         <img
                             src="./archivos/imagenes/Logo sin fondo30.png"
                             alt="Logo de C&K"
+                            loading="lazy"
                         />
                         <h3>Ballet niños</h3>
                         <h4>Consultar</h4>

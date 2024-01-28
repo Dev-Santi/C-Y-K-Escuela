@@ -289,31 +289,6 @@ p {
 }
 
 /* desktop */
-@media (min-width: 56rem) {
-    .inicio {
-        height: calc(100vh - 20rem);
-        width: 100vw;
-        margin-left: -5rem;
-    }
-
-    .inicio .inicio_texto {
-        gap: 3rem;
-    }
-
-    .inicio h1 {
-        font-size: 5rem;
-        line-height: 6rem;
-    }
-
-    .inicio p {
-        font-size: 2rem;
-    }
-
-    .inicio .inicio_texto .redireccion_en_inicio a:hover {
-        transform: scale(1.05);
-        background-color: var(--rojo);
-    }
-}
 
 /* Contenido principal - main */
 .contenido_principal {
@@ -398,6 +373,7 @@ p {
     cursor: pointer;
     transition: all var(--transicion-lenta);
     box-shadow: 4px 8px var(--rojo);
+    overflow: hidden;
 }
 
 .contenido_principal .clases .clase h3 {
@@ -428,50 +404,14 @@ p {
     transition: all var(--transicion-lenta);
 }
 
-.contenido_principal .clases .bg_1 {
-    background-image: url('../archivos/imagenes/Pilates.webp');
-}
-.contenido_principal .clases .bg_2 {
-    background-image: url('../archivos/imagenes/Foto\ directores\ del\ estudio.1.webp');
-}
-.contenido_principal .clases .bg_3 {
-    background-image: url('../archivos/imagenes/Ballet\ adulto\ 1.webp');
-}
-.contenido_principal .clases .bg_4 {
-    background-image: url('../archivos/imagenes/Ritmos\ 1.webp');
-}
-
-@media (min-width: 56rem) {
-    .contenido_principal .clases h2 {
-        font-size: 4.25rem;
-    }
-
-    .contenido_principal .clases .clase {
-        width: 50rem;
-        padding-inline: 12rem;
-    }
-
-    .contenido_principal .clases .clase:hover .fondo-opaco {
-        background-color: #080808fd;
-    }
-
-    .contenido_principal .clases .clase:hover {
-        transform: scale(1.03);
-    }
-    .contenido_principal .clases .clase:hover img {
-        opacity: 0%;
-    }
-
-    .contenido_principal .clases .clase:hover h3 {
-        transform: translateY(-12rem);
-    }
-
-    .contenido_principal .clases .clase:hover h4 {
-        opacity: 100%;
-    }
-}
-
-@media (min-width: 100rem) {
+.contenido_principal .clases .clase .imagen_fondo_clase {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: transparent;
+    border-radius: 0;
 }
 
 /* Utils */
@@ -512,5 +452,65 @@ p {
 
     100% {
         transform: translateX(-100vw);
+    }
+}
+
+/* Medias */
+@media (min-width: 56rem) {
+    .inicio {
+        height: calc(100vh - 20rem);
+        width: 100vw;
+        margin-left: -5rem;
+    }
+
+    .inicio .inicio_texto {
+        gap: 3rem;
+    }
+
+    .inicio h1 {
+        font-size: 5rem;
+        line-height: 6rem;
+    }
+
+    .inicio p {
+        font-size: 2rem;
+    }
+
+    .inicio .inicio_texto .redireccion_en_inicio a:hover {
+        transform: scale(1.05);
+        background-color: var(--rojo);
+    }
+
+    .no_scroll {
+        height: auto;
+        overflow: auto;
+    }
+
+    .opacidad_activada {
+        display: none;
+    }
+
+    .contenido_principal .clases h2 {
+        font-size: 4.25rem;
+    }
+
+    .contenido_principal .clases .clase {
+        width: 50rem;
+        padding-inline: 12rem;
+    }
+
+    .contenido_principal .clases .clase:hover {
+        transform: scale(1.03);
+    }
+    .contenido_principal .clases .clase:hover img {
+        opacity: 2%;
+    }
+
+    .contenido_principal .clases .clase:hover h3 {
+        transform: translateY(-12rem);
+    }
+
+    .contenido_principal .clases .clase:hover h4 {
+        opacity: 100%;
     }
 }
