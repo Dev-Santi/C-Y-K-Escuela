@@ -27,8 +27,8 @@ button {
     --verde-claro: #648a88;
     --rojo: #bc4270;
     --negro: #080808;
+    --negro-opaco: #08080899;
     --blanco: #eeeeee;
-    --negro-opaco: #00000090;
 
     /* Transiciones */
     --transicion-normal: 120ms;
@@ -270,7 +270,6 @@ p {
     width: 100%;
     height: 3rem;
     box-shadow: 0 0 75px 120px var(--negro);
-
     background-color: var(--negro);
 }
 
@@ -317,7 +316,10 @@ p {
 
 /* Contenido principal - main */
 .contenido_principal {
+    margin-top: 5rem;
     width: 100%;
+    max-width: 128rem;
+    margin: 0 auto;
     padding: 2rem;
 }
 
@@ -348,11 +350,132 @@ p {
 }
 
 /* Clases */
-
 .contenido_principal .clases {
+    text-align: center;
+    margin-top: 14rem;
+    margin-bottom: 6rem;
+}
+
+.contenido_principal .clases img {
+    position: relative;
+    width: 20rem;
+    background-color: #ffffffb0;
+    border-radius: 50%;
+    z-index: 200;
+    transition: all var(--transicion-lenta);
+}
+
+.contenido_principal .clases h2 {
+    font-size: 3rem;
+    margin-bottom: 6rem;
+}
+
+.contenido_principal .clases .contenedor_clases {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contenido_principal .clases .clase {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    width: 100%;
+    padding-block: 3rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    transition: all var(--transicion-lenta);
+    box-shadow: 2px 8px 2px 1px var(--rojo);
+}
+
+.contenido_principal .clases .clase h3 {
+    margin-top: 1.25rem;
+    font-size: 3rem;
+    text-shadow: 0 0 5px var(--negro);
+    position: relative;
+    z-index: 200;
+    transition: all var(--transicion-lenta);
+    text-transform: uppercase;
+}
+
+.contenido_principal .clases .clase h4 {
+    position: relative;
+    z-index: 200;
+    font-size: 3rem;
+    text-transform: uppercase;
+    opacity: 0%;
+    transition: all var(--transicion-lenta);
+    color: var(--rojo);
+    text-decoration: underline;
+}
+
+.contenido_principal .clases .fondo-opaco {
+    position: absolute;
+    inset: 0;
+    background-color: var(--negro-opaco);
+    transition: all var(--transicion-lenta);
+}
+
+.contenido_principal .clases .clase:hover .fondo-opaco {
+    background-color: #080808fd;
+}
+
+.contenido_principal .clases .clase:hover {
+    transform: scale(1.05);
+}
+.contenido_principal .clases .clase:hover img {
+    opacity: 0%;
+}
+
+.contenido_principal .clases .clase:hover h3 {
+    transform: translateY(-12rem);
+    font-size: 4rem;
+}
+
+.contenido_principal .clases .clase:hover h4 {
+    opacity: 100%;
+}
+
+.contenido_principal .clases .bg_1 {
+    background-image: url('../archivos/imagenes/Pilates.jpg');
+}
+.contenido_principal .clases .bg_2 {
+    background-image: url('../archivos/imagenes/Foto\ directores\ del\ estudio.1.jpg');
+}
+.contenido_principal .clases .bg_3 {
+    background-image: url('../archivos/imagenes/Ballet\ adulto\ 2.jpg');
+}
+.contenido_principal .clases .bg_4 {
+    background-image: url('../archivos/imagenes/Ballet\ Niñ@s\ 2.jpg');
+}
+
+@media (min-width: 56rem) {
+    .contenido_principal .clases h2 {
+        font-size: 4.25rem;
+    }
+
+    .contenido_principal .clases .clase {
+        width: 50rem;
+        padding-inline: 12rem;
+    }
+}
+
+@media (min-width: 100rem) {
 }
 
 /* Utils */
+.no_scroll {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
 .only_screen_reader {
     clip: rect(1px, 1px, 1px, 1px);
     clip-path: inset(50%);

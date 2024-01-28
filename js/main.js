@@ -27,11 +27,21 @@ function programa() {
 }
 
 function abrirYCerrarMenu() {
-    document.getElementById('idMenu').classList.toggle('visible');
+    const menu = document.getElementById('idMenu');
+    menu.classList.toggle('visible');
     document.getElementById('idBotonDeNavegacion').classList.toggle('cerrar');
     document
         .getElementById('idContenedorDeOpacidad')
         .classList.toggle('opacidad_activada');
+
+    //Desactivar el scroll cuando el menu este activo
+    document.getElementById('idBody').classList.toggle('no_scroll');
+
+    //Desactivar menu siempre que se clickee un link
+    for (let link of menu.children) {
+        link.removeEventListener('click', abrirYCerrarMenu);
+        link.addEventListener('click', abrirYCerrarMenu);
+    }
 }
 
 function animacionImagenesInicio() {
