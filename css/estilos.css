@@ -46,6 +46,7 @@ body {
     position: relative;
     overflow-x: hidden;
     min-height: 100vh;
+    scroll-behavior: smooth;
 }
 /* --- */
 
@@ -427,25 +428,6 @@ p {
     transition: all var(--transicion-lenta);
 }
 
-.contenido_principal .clases .clase:hover .fondo-opaco {
-    background-color: #080808fd;
-}
-
-.contenido_principal .clases .clase:hover {
-    transform: scale(1.03);
-}
-.contenido_principal .clases .clase:hover img {
-    opacity: 0%;
-}
-
-.contenido_principal .clases .clase:hover h3 {
-    transform: translateY(-12rem);
-}
-
-.contenido_principal .clases .clase:hover h4 {
-    opacity: 100%;
-}
-
 .contenido_principal .clases .bg_1 {
     background-image: url('../archivos/imagenes/Pilates.webp');
 }
@@ -453,7 +435,7 @@ p {
     background-image: url('../archivos/imagenes/Foto\ directores\ del\ estudio.1.webp');
 }
 .contenido_principal .clases .bg_3 {
-    background-image: url('../archivos/imagenes/Ballet\ adulto\ 2.jpg');
+    background-image: url('../archivos/imagenes/Ballet\ adulto\ 1.webp');
 }
 .contenido_principal .clases .bg_4 {
     background-image: url('../archivos/imagenes/Ritmos\ 1.webp');
@@ -467,6 +449,25 @@ p {
     .contenido_principal .clases .clase {
         width: 50rem;
         padding-inline: 12rem;
+    }
+
+    .contenido_principal .clases .clase:hover .fondo-opaco {
+        background-color: #080808fd;
+    }
+
+    .contenido_principal .clases .clase:hover {
+        transform: scale(1.03);
+    }
+    .contenido_principal .clases .clase:hover img {
+        opacity: 0%;
+    }
+
+    .contenido_principal .clases .clase:hover h3 {
+        transform: translateY(-12rem);
+    }
+
+    .contenido_principal .clases .clase:hover h4 {
+        opacity: 100%;
     }
 }
 
