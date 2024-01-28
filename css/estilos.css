@@ -357,8 +357,7 @@ p {
 /* Clases */
 .contenido_principal .clases {
     text-align: center;
-    margin-top: 14rem;
-    margin-bottom: 6rem;
+    margin-top: 24rem;
 }
 
 .contenido_principal .clases img {
@@ -376,8 +375,9 @@ p {
 }
 
 .contenido_principal .clases .contenedor_clases {
+    margin-top: 10rem;
     display: flex;
-    gap: 4rem;
+    gap: 10rem;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -397,7 +397,7 @@ p {
     background-size: cover;
     cursor: pointer;
     transition: all var(--transicion-lenta);
-    box-shadow: 2px 8px 2px 1px var(--rojo);
+    box-shadow: 4px 8px var(--rojo);
 }
 
 .contenido_principal .clases .clase h3 {
