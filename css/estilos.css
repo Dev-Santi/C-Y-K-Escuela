@@ -79,7 +79,7 @@ p {
     align-items: center;
     justify-content: space-between;
 
-    height: 20rem;
+    height: 13rem;
     max-width: 128rem;
     margin: 0 auto;
 }
@@ -95,7 +95,7 @@ p {
 }
 
 .navegacion > a img {
-    max-width: 14rem;
+    max-width: 12rem;
     padding-block: 2rem;
 }
 
@@ -342,6 +342,8 @@ p {
 .contenido_principal .clases h2 {
     font-size: 3rem;
     margin-bottom: 6rem;
+    animation: neon 6s ease-in-out infinite;
+    text-shadow: 0 8px 5px var(--rojo);
 }
 
 .contenido_principal .clases .contenedor_clases {
@@ -433,6 +435,20 @@ p {
 
     100% {
         transform: translateX(-100vw);
+    }
+}
+
+@keyframes neon {
+    0% {
+        text-shadow: 0 8px 5px var(--rojo);
+    }
+
+    50% {
+        text-shadow: 0 8px 5px var(--verde);
+    }
+
+    100% {
+        text-shadow: 0 8px 5px var(--rojo);
     }
 }
 
