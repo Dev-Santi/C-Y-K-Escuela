@@ -73,6 +73,15 @@ p {
     font-weight: 600;
 }
 
+/* Icono de wpp */
+.icono_whatsapp {
+    display: none;
+}
+
+.icono_whatsapp img {
+    width: 100%;
+}
+
 /* Navegacion */
 .navegacion {
     display: flex;
@@ -456,6 +465,24 @@ p {
 @media (min-width: 56rem) {
     body {
         padding-inline: 5rem;
+    }
+
+    .icono_whatsapp {
+        display: block;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        z-index: 500;
+        margin-bottom: 2rem;
+        margin-right: 2rem;
+        opacity: 0.4;
+        width: 7rem;
+        transition: all var(--transicion-normal);
+    }
+
+    .icono_whatsapp:hover {
+        opacity: 0.9;
+        transform: scale(1.1);
     }
 
     .inicio {
