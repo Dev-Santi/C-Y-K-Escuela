@@ -308,6 +308,10 @@ p {
     margin-right: 0.25rem;
 }
 
+.margen-top {
+    margin-top: 10rem;
+}
+
 .contenido_principal .contenedor_banner {
     position: absolute;
     left: 0;
@@ -336,7 +340,7 @@ p {
 /* Clases */
 .contenido_principal .clases {
     text-align: center;
-    margin-top: 24rem;
+    margin-top: 15rem;
 }
 
 .contenido_principal .clases img {
@@ -350,13 +354,12 @@ p {
 
 .contenido_principal .clases h2 {
     font-size: 3rem;
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
     animation: neon 6s ease-in-out infinite;
     text-shadow: 0 8px 5px var(--rojo);
 }
 
 .contenido_principal .clases .contenedor_clases {
-    margin-top: 10rem;
     display: flex;
     gap: 10rem;
     align-items: center;
@@ -417,10 +420,44 @@ p {
     border-radius: 0;
 }
 
+/* Nosotros */
+
+.nosotros {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 22rem;
+}
+
+.nosotros h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    animation: neon 6s ease-in-out infinite;
+}
+
+.nosotros h3 {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.5rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.nosotros img {
+    width: 5rem;
+    height: fit-content;
+}
+
 /* Utils */
 .no_scroll {
     height: 100vh;
     overflow-y: hidden;
+}
+
+.flex_col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 #idContenedorDeOpacidad {
@@ -540,5 +577,21 @@ p {
 
     .contenido_principal .clases .clase:hover h4 {
         opacity: 100%;
+    }
+
+    .nosotros {
+        margin-top: 26rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nosotros h2 {
+        font-size: 4.25rem;
+        width: 100%;
+    }
+
+    .nosotros h3 {
+        margin: 0;
+        font-size: 1.75rem;
     }
 }
