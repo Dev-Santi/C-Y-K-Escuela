@@ -37,6 +37,9 @@ button {
 
     /* Tamaños de fuente */
     --fuente-normal: 1.75rem;
+
+    /* Bordes */
+    --borde-redondo: 0.8rem;
 }
 
 /* Este codigo se encarga de que no haya desbordamientos cuando se utiliza desde un telefono */
@@ -261,7 +264,7 @@ p {
     gap: 1rem;
     padding: 1.5rem 4rem;
     background-color: var(--verde);
-    border-radius: 0.5rem;
+    border-radius: var(--borde-redondo);
     width: fit-content;
     white-space: nowrap;
     transition: all var(--transicion-lenta);
@@ -422,30 +425,74 @@ p {
 
 /* Nosotros */
 
-.nosotros {
+.nosotros .nosotros_razones {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
+}
+
+.nosotros {
     margin-top: 22rem;
 }
 
 .nosotros h2 {
     font-size: 3rem;
     text-transform: uppercase;
+    text-align: center;
     animation: neon 6s ease-in-out infinite;
+    margin-bottom: 2rem;
+}
+
+.nosotros h3,
+.nosotros p {
+    font-size: 1.5rem;
+    width: 100%;
 }
 
 .nosotros h3 {
     display: flex;
     gap: 2rem;
-    font-size: 1.5rem;
-    width: 100%;
-    margin-top: 2rem;
 }
 
-.nosotros img {
+.nosotros div div h3 img {
     width: 5rem;
     height: fit-content;
+}
+
+.nosotros div a {
+    display: block;
+    background-color: var(--blanco);
+    color: var(--negro);
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: var(--borde-redondo);
+    transition: all var(--transicion-normal);
+    outline: 2px solid var(--negro);
+}
+
+.nosotros .imagen_nosotros {
+    display: none;
+    margin-top: 12rem;
+    position: absolute;
+    inset: 0;
+    transform: translateX(-4rem);
+    width: fit-content;
+}
+
+.nosotros .imagen_nosotros img {
+    width: 40rem;
+}
+
+.nosotros .nuestro_equipo {
+    margin-top: 8rem;
+}
+
+.nosotros .nuestro_equipo h2 {
+    text-align: center;
 }
 
 /* Utils */
@@ -457,7 +504,7 @@ p {
 .flex_col {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 #idContenedorDeOpacidad {
@@ -581,17 +628,40 @@ p {
 
     .nosotros {
         margin-top: 26rem;
+    }
+
+    .nosotros .nosotros_razones {
         flex-direction: row;
         justify-content: space-between;
     }
 
     .nosotros h2 {
         font-size: 4.25rem;
-        width: 100%;
+        flex-basis: 50%;
+        text-align: left;
     }
 
-    .nosotros h3 {
+    .nosotros .nosotros_razones > div {
+        flex-basis: 50%;
+    }
+
+    .nosotros h3,
+    .nosotros p {
         margin: 0;
         font-size: 1.75rem;
+    }
+
+    .nosotros div a:hover {
+        background-color: var(--negro);
+        color: var(--blanco);
+        outline: 2px solid var(--blanco);
+    }
+
+    .nosotros .imagen_nosotros {
+        display: block;
+    }
+
+    .nosotros .nuestro_equipo {
+        margin-top: 14rem;
     }
 }

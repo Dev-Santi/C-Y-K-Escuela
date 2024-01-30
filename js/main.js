@@ -16,7 +16,6 @@ function programa() {
 
     //Botón para desplegar el menú de navegación
     botonMenu.addEventListener('click', abrirYCerrarMenu);
-    //Cuando un link sea clickeado, desactivar la navegacion
     for (let link of menu.children) {
         link.addEventListener('click', abrirYCerrarMenu);
     }
@@ -24,7 +23,7 @@ function programa() {
     //Desplazamiento de fondos en el inicio
     setInterval(() => {
         animacionImagenesInicio();
-    }, 5000);
+    }, 6000);
 
     //Funciones
     function abrirYCerrarMenu() {
