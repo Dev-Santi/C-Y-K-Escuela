@@ -767,5 +767,11 @@ p {
         width: auto;
         flex-direction: row;
         align-items: start;
+        text-align: left;
+    }
+
+    .contacto ul li {
+        text-align: left;
+        justify-content: start;
     }
 }
