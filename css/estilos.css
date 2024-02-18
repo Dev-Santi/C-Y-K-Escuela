@@ -198,7 +198,7 @@ p {
         row-gap: 5rem;
 
         transition: all ease-out var(--transicion-lenta);
-        transform: translateX(22rem);
+        transform: translateX(35rem);
     }
 
     .navegacion ul li a:hover {
@@ -298,6 +298,11 @@ p {
 /* desktop */
 
 /* Contenido principal - main */
+.beneficios_edades h2 {
+    display: flex;
+    justify-content: center;
+}
+
 .contenido_principal {
     margin-top: 5rem;
     width: 100%;
@@ -422,14 +427,18 @@ p {
     background-color: transparent;
     border-radius: 0;
 }
-
-/* Nosotros */
+/* Nosotros y beneficios */
 
 .nosotros .nosotros_razones {
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+}
+
+.beneficios_edades h2 {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .nosotros {
@@ -485,6 +494,16 @@ p {
     border-radius: var(--borde-redondo);
     transition: all var(--transicion-normal);
     outline: 2px solid var(--negro);
+}
+
+.beneficio_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.beneficio_header img {
+    display: none;
 }
 
 .nosotros .imagen_nosotros {
@@ -633,6 +652,11 @@ p {
     }
 }
 
+.flex ul li {
+    list-style: disc;
+    font-size: var(--fuente-normal);
+}
+
 /* Medias */
 @media (min-width: 56rem) {
     body {
@@ -723,6 +747,10 @@ p {
         justify-content: space-between;
     }
 
+    .nosotros .nosotros_razones.beneficios_edades {
+        flex-direction: row-reverse;
+    }
+
     .nosotros h2,
     .ubicacion h2 {
         font-size: 4.25rem;
@@ -773,5 +801,24 @@ p {
     .contacto ul li {
         text-align: left;
         justify-content: start;
+    }
+
+    .beneficio_header img {
+        display: block;
+        width: 35rem;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+    }
+
+    .flex ul li {
+        list-style: disc;
+        font-size: 1.25rem;
+    }
+
+    .flex ul :nth-child(1) {
+        list-style: none;
     }
 }
