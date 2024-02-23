@@ -85,6 +85,19 @@ p {
     width: 100%;
 }
 
+/* Productores */
+.productores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16rem 0;
+}
+
+.productores img {
+    width: 60rem;
+}
+
 /* Navegacion */
 .navegacion {
     display: flex;
@@ -296,8 +309,16 @@ p {
 }
 
 /* desktop */
+.hidden_desktop {
+    display: block;
+}
+
+.hidden_mobile {
+    display: none;
+}
 
 /* Contenido principal - main */
+
 .beneficios_edades h2 {
     display: flex;
     justify-content: center;
@@ -445,25 +466,12 @@ p {
     margin-top: 22rem;
 }
 
-.nosotros h2,
-.ubicacion h2 {
+.nosotros h2 {
     font-size: 3rem;
     text-transform: uppercase;
     text-align: center;
     animation: neon 6s ease-in-out infinite;
     margin-bottom: 2rem;
-}
-
-.ubicacion h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.25rem;
-    margin-bottom: 5rem;
-}
-
-.ubicacion h2 img {
-    width: 4rem;
 }
 
 .nosotros h3,
@@ -576,6 +584,16 @@ p {
     width: 18rem;
 }
 
+.font-2 {
+    font-size: 2rem !important;
+    padding-bottom: 1rem;
+    margin-left: -2rem;
+}
+
+.flex {
+    padding-left: 3rem;
+}
+
 .contacto .logo img {
     width: 100%;
 }
@@ -663,6 +681,14 @@ p {
         padding-inline: 5rem;
     }
 
+    .productores {
+        flex-direction: row;
+    }
+
+    .nombre {
+        width: 1px;
+    }
+
     .icono_whatsapp {
         display: block;
         position: fixed;
@@ -708,6 +734,14 @@ p {
     .no_scroll {
         height: auto;
         overflow: auto;
+    }
+
+    .hidden_desktop {
+        display: none;
+    }
+
+    .hidden_mobile {
+        display: block;
     }
 
     .opacidad_activada {
@@ -815,7 +849,7 @@ p {
 
     .flex ul li {
         list-style: disc;
-        font-size: 1.25rem;
+        font-size: 1.65rem;
     }
 
     .flex ul :nth-child(1) {
