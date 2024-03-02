@@ -89,6 +89,7 @@ p {
 .productores {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     margin: 16rem 0;
 }
 
@@ -699,6 +700,10 @@ p {
 @media (min-width: 56rem) {
     body {
         padding-inline: 5rem;
+    }
+
+    .productores div {
+        width: auto;
     }
 
     .productores {
