@@ -98,10 +98,6 @@ p {
     flex-direction: column;
 }
 
-.productores img {
-    width: 60rem;
-}
-
 /* Navegacion */
 .navegacion {
     display: flex;
