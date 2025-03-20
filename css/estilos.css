@@ -78,7 +78,21 @@ p {
 
 /* Icono de wpp */
 .icono_whatsapp {
-    display: none;
+    display: block;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 500;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    opacity: 0.4;
+    width: 6rem;
+    transition: all var(--transicion-normal);
+}
+
+.icono_whatsapp:active {
+    opacity: 0.9;
+    transform: scale(1.1);
 }
 
 .icono_whatsapp img {
@@ -348,6 +362,10 @@ p {
     padding-block: 0.75rem;
     border-top: 1px solid var(--rojo);
     border-bottom: 1px solid var(--verde);
+}
+
+.banner a:hover {
+    color: var(--rojo);
 }
 
 .contenido_principal .banner {
@@ -707,22 +725,15 @@ p {
     }
 
     .icono_whatsapp {
-        display: block;
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        z-index: 500;
-        margin-bottom: 2rem;
-        margin-right: 2rem;
-        opacity: 0.4;
         width: 7rem;
-        transition: all var(--transicion-normal);
     }
 
     .icono_whatsapp:hover {
         opacity: 0.9;
         transform: scale(1.1);
     }
+
+    
 
     .inicio {
         height: calc(100vh - 20rem);
